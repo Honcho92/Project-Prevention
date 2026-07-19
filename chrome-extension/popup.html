@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=380" />
+  <title>Scam-Shield</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>Scam-Shield</h1>
+    <div id="badge"></div>
+  </header>
+
+  <section id="page-score" class="hidden">
+    <h2>Current page</h2>
+    <div id="page-url" class="url"></div>
+    <div class="verdict-row">
+      <span id="verdict" class="verdict"></span>
+      <span id="score" class="score"></span>
+    </div>
+    <div id="scam-type" class="scam-type"></div>
+    <details>
+      <summary>Signals (<span id="signals-count">0</span>)</summary>
+      <ul id="signals"></ul>
+    </details>
+    <details>
+      <summary>Entities</summary>
+      <ul id="entities"></ul>
+    </details>
+    <details id="advice-block">
+      <summary>What to do</summary>
+      <ul id="advice"></ul>
+    </details>
+    <details>
+      <summary>Bait questions to ask</summary>
+      <ul id="questions"></ul>
+    </details>
+  </section>
+
+  <section id="empty" class="hidden">
+    <p>No suspicious signals on this page.</p>
+    <p>Or paste a message below and click "Score it":</p>
+    <textarea id="manual" rows="4" placeholder="Paste a suspicious message here..."></textarea>
+    <button id="manual-go">Score it</button>
+    <div id="manual-out"></div>
+  </section>
+
+  <footer>
+    <small>Heuristic only. 100% offline. Nothing leaves your browser.</small>
+  </footer>
+
+  <script src="detector.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

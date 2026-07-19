@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtualenvs
+venv/
+env/
+.venv/
+env.bak/
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+scam-shield.*.sqlite
+
+# Project-specific runtime data
+data/
+reports/auto-*/
+reports/sample-pack/
+reports/tg-*/
+*.sqlite
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Local env files (NEVER commit these)
+.env
+.env.local
+*.local
+secrets/
