@@ -3,8 +3,10 @@
 > Fool-proof scam detection and counter-engagement. Pure-Python, works offline,
 > ships with a Chrome extension and a Telegram bot.
 
+[![Tests](https://github.com/Honcho92/scam-shield/actions/workflows/tests.yml/badge.svg)](https://github.com/Honcho92/scam-shield/actions/workflows/tests.yml)
+[![JS parity](https://github.com/Honcho92/scam-shield/actions/workflows/js-parity.yml/badge.svg)](https://github.com/Honcho92/scam-shield/actions/workflows/js-parity.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Tests](https://img.shields.io/badge/tests-88%20passing-brightgreen.svg)](#tests)
+[![Tests count](https://img.shields.io/badge/tests-88%20passing-brightgreen.svg)](#tests)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Zero deps](https://img.shields.io/badge/dependencies-zero-orange.svg)](#design)
 
