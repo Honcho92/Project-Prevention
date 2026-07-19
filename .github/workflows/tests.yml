@@ -20,6 +20,12 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         python-version: ["3.11", "3.12", "3.13"]
 
+    defaults:
+      run:
+        # cross-platform: set PYTHONPATH via the env: block instead of shell prefix
+        # so this works on both bash (Linux) and PowerShell (Windows)
+        shell: bash
+
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -35,9 +41,14 @@ jobs:
           python -c "import sys; print(sys.platform)"
 
       - name: Run the test suite
+        env:
+          PYTHONPATH: "."
         run: |
           python -m unittest discover -s tests -v 2>&1 | tail -50
 
-      - name: Run the demo
+      - name: Run the demo (Linux only — bash is the default shell)
+        if: runner.os == 'Linux'
+        env:
+          PYTHONPATH: "."
         run: |
-          PYTHONPATH=. python -m scam_shield demo
+          python -m scam_shield demo
