@@ -1,0 +1,135 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8" />
+<title>Scam-Shield Telegram Mock</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0; padding: 20px;
+    background: #17212b;
+    color: #e9eef2;
+    min-height: 100vh;
+  }
+  .phone {
+    max-width: 480px; margin: 0 auto;
+    background: #0e1621;
+    border-radius: 14px; padding: 12px 0;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+  }
+  .header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 14px 12px;
+    border-bottom: 1px solid #1c2733;
+  }
+  .avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, #b91c1c 0%, #f59e0b 100%);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 16px;
+  }
+  .name { font-weight: 600; font-size: 15px; }
+  .sub { font-size: 12px; color: #6c7883; }
+  .msg { padding: 4px 14px; margin: 4px 0; }
+  .bubble {
+    display: inline-block; max-width: 80%;
+    padding: 7px 11px;
+    border-radius: 12px;
+    line-height: 1.4; font-size: 14px;
+    white-space: pre-wrap; word-break: break-word;
+  }
+  .user { text-align: right; }
+  .user .bubble {
+    background: #2b5278; color: #e9eef2;
+    border-bottom-right-radius: 2px;
+  }
+  .bot .bubble {
+    background: #182533; color: #e9eef2;
+    border-bottom-left-radius: 2px;
+  }
+  pre.bubble {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+    font-size: 12.5px;
+    white-space: pre-wrap;
+  }
+  .emoji { font-size: 20px; }
+  .time { font-size: 10px; color: #6c7883; margin: 0 14px 4px; }
+  .user .time { text-align: right; }
+</style>
+</head>
+<body>
+  <div class="phone">
+    <div class="header">
+      <div class="avatar">S</div>
+      <div>
+        <div class="name">@Shield_Scams_Bot</div>
+        <div class="sub">bot</div>
+      </div>
+    </div>
+
+    <div class="msg user">
+      <div class="bubble">/score Microsoft Security detected a virus on your PC. Call +1-888-555-0199 and download AnyDesk immediately. Pay 299 USD in gift cards within 24 hours or your accounts will be locked.</div>
+      <div class="time">12:42 AM</div>
+    </div>
+
+    <div class="msg bot">
+<pre class="bubble">🚨 FINAL verdict: SCAM   score: 86/100
+FINAL type:    phishing
+(heuristic: scam 79/100)
+(LLM:       scam  95% conf)
+  reason: Lookalike domain impersonating Microsoft with AnyDesk remote-access request.
+
+Signals:
+  - [phishing] impersonating microsoft via lookalike link  (+30)  'accounts-microsoft-support'
+  - [tech_support] claims to be Microsoft/Apple/Geek Squad/Amazon support  (+25)  'Microsoft'
+  - [tech_support] remote-access request (AnyDesk, TeamViewer)  (+30)  'AnyDesk'
+  - [universal] urgency / countdown / act now  (+10)  'within 24 hours'
+  - [universal] payment in untraceable form  (+20)  'gift cards'
+
+Entities found:
+  phones  : +1-888-555-0199
+  money   : 299 USD
+
+Advice:
+  - Real Microsoft/Apple support will never cold-call you about a problem.
+  - Never install remote-access software at the request of an unsolicited caller.
+  - Verify the site yourself at microsoft.com.</pre>
+      <div class="time">12:42 AM</div>
+    </div>
+
+    <div class="msg bot">
+<pre class="bubble">Bait questions for phishing:
+
+  Q: What's the company's official domain? I'll go there myself.
+  Why: If they can't tell you (or give you the same lookalike link) it's a phishing link.
+
+  Q: Hold on, my buddy works at [company]. Let me conference him in — your full name and direct number?
+  Why: Scammers vanish the second you threaten to bring in a third party.
+
+  Q: Open the site yourself and tell me the certificate issuer.
+  Why: EV certs show the real company name in the browser bar. Phishers can't fake that.</pre>
+      <div class="time">12:42 AM</div>
+    </div>
+
+    <div class="msg user">
+      <div class="bubble">/quiet</div>
+      <div class="time">12:43 AM</div>
+    </div>
+
+    <div class="msg bot">
+      <div class="bubble">Quiet mode: ON. Replies will be one line.<br>Use /verbose to turn off.</div>
+      <div class="time">12:43 AM</div>
+    </div>
+
+    <div class="msg user">
+      <div class="bubble">/score Hi, your Amazon order #112-3344556-7788990 has shipped! Track at amazon.com/orders. Estimated delivery: Tuesday.</div>
+      <div class="time">12:45 AM</div>
+    </div>
+
+    <div class="msg bot">
+      <div class="bubble"><span class="emoji">✅</span> CLEAN  0/100  (unknown)   LLM: clean 100%</div>
+      <div class="time">12:45 AM</div>
+    </div>
+  </div>
+</body>
+</html>

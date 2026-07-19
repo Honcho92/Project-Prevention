@@ -32,13 +32,14 @@ htmlcov/
 *.sqlite-shm
 scam-shield.*.sqlite
 
-# Project-specific runtime data
+# Runtime data — keep the README screenshots, ignore the rest
 data/
 reports/auto-*/
 reports/sample-pack/
 reports/tg-*/
-*.sqlite
 *.log
+# allow the screenshot PNGs in docs/
+!docs/*.png
 
 # OS
 Thumbs.db

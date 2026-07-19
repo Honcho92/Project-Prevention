@@ -12,6 +12,16 @@
 scams. It runs entirely on your machine — no data leaves unless you wire up
 the optional Telegram bot or local Ollama second opinion.
 
+## See it in action
+
+| Telegram bot reply | Chrome extension popup |
+|:------------------:|:----------------------:|
+| ![Telegram](docs/screenshot-telegram.png) | ![Chrome](docs/screenshot-chrome-popup.png) |
+
+The Telegram bot on the left scored a phishing message in 1.3s using both the
+heuristic engine and a local Ollama LLM. The Chrome extension on the right
+flagged a lookalike Microsoft domain before the user typed anything.
+
 ## What it does
 
 | Layer | What | Where |
@@ -135,6 +145,7 @@ scam_shield/             # 9 Python modules (detector, playbook, honeypot,
                          #   digest, telegram_bot, cli)
 chrome-extension/        # Manifest V3 extension, vanilla JS, no frameworks
 tests/                   # 8 test files, 88 passing
+docs/                    # Screenshots for the README + HTML mockups
 OPERATOR_GUIDE.md        # One-page reference for every layer
 setup_scheduler.ps1      # One-time Windows Task Scheduler setup
 make_icons.py            # Regenerate Chrome extension icons (stdlib only)

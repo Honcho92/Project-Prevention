@@ -1,0 +1,93 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8" />
+<title>Scam-Shield Chrome Popup Mock</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0; padding: 0;
+    width: 380px;
+    font-size: 14px; color: #1a1a1a;
+    background: #fff;
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px; border-bottom: 1px solid #e5e7eb;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+  }
+  h1 { margin: 0; font-size: 16px; font-weight: 600; }
+  #badge { font-size: 12px; opacity: 0.85; }
+  section { padding: 12px 14px; }
+  h2 { margin: 0 0 6px 0; font-size: 12px; text-transform: uppercase; color: #475569; letter-spacing: 0.04em; }
+  .url {
+    font-size: 11px; color: #475569; word-break: break-all;
+    background: #f1f5f9; padding: 4px 6px; border-radius: 4px; margin-bottom: 8px;
+  }
+  .verdict-row { display: flex; align-items: baseline; gap: 10px; }
+  .verdict { font-size: 18px; font-weight: 700; }
+  .verdict.scam { color: #b91c1c; }
+  .score { font-size: 14px; color: #475569; }
+  .scam-type { font-size: 12px; color: #475569; margin-top: 4px; }
+  details { margin-top: 8px; border-top: 1px solid #f1f5f9; padding-top: 6px; }
+  details summary { cursor: pointer; font-size: 12px; color: #2563eb; }
+  ul { margin: 6px 0 0 16px; padding: 0; font-size: 12px; }
+  li { margin-bottom: 4px; line-height: 1.35; word-break: break-word; }
+  footer { padding: 8px 14px; border-top: 1px solid #e5e7eb; color: #94a3b8; text-align: center; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Scam-Shield</h1>
+    <div id="badge">scam</div>
+  </header>
+
+  <section>
+    <h2>Current page</h2>
+    <div class="url">https://accounts-microsoft-support.com/verify?id=9921</div>
+    <div class="verdict-row">
+      <span class="verdict scam">SCAM</span>
+      <span class="score">86/100</span>
+    </div>
+    <div class="scam-type">Type: phishing</div>
+    <details open>
+      <summary>Signals (5)</summary>
+      <ul>
+        <li>[phishing] impersonating microsoft via lookalike link (+30)</li>
+        <li>[tech_support] claims to be Microsoft support (+25)</li>
+        <li>[tech_support] remote-access request (AnyDesk) (+30)</li>
+        <li>[universal] click here / log in via link (+10)</li>
+        <li>[universal] payment in untraceable form (+20)</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Entities</summary>
+      <ul>
+        <li>URLs: accounts-microsoft-support.com/verify</li>
+        <li>Money: 299 USD</li>
+      </ul>
+    </details>
+    <details open>
+      <summary>What to do</summary>
+      <ul>
+        <li>Real Microsoft/Apple support will never cold-call you.</li>
+        <li>Never install remote-access software at an unsolicited request.</li>
+        <li>Verify the site at microsoft.com yourself.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Bait questions to ask</summary>
+      <ul>
+        <li><strong>Q:</strong> What's the badge / technician ID on your profile?<br><strong>Why:</strong> Real support has IDs. Scammers invent one.</li>
+        <li><strong>Q:</strong> Which datacenter is my case logged in?<br><strong>Why:</strong> Specific regional naming is rarely in the script.</li>
+        <li><strong>Q:</strong> Hold on, let me conference in my buddy at Microsoft.</li>
+      </ul>
+    </details>
+  </section>
+
+  <footer>
+    <small>Heuristic only. 100% offline. Nothing leaves your browser.</small>
+  </footer>
+</body>
+</html>
